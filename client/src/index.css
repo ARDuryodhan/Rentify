@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+a{
+  text-decoration: none;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: bold;
+  font-style: normal;
+}
+.poetsen-one {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+}
+.bg-avatar{
+  background: #DC5F00;
+}
+
+.poppins{
+  font-family: "Roboto",sans-serif;
+}
+
+
+/* Toastify css*/
+
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  color:  #fff;
+  text-transform: capitalize; 
+  font-weight: bold;
+}
+.toastProgress {
+  background: whitesmoke !important;
+}
+
+/*swiper css*/
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 0px !important;
+}
