@@ -42,45 +42,6 @@ const loginSchema = z.object({
     .max(1024, { message: "Password can't be more than 1024 characters" }),
 });
 
-//addproperty//
 
-// const addPropertySchema = z.object({
-//   uploadimg: z
-//   .string({required_error:"Fill this input field"})
-//   .trim(),
-
-//   title: z
-//   .string({required_error:"Fill this input field"})
-//   .trim()
-//   .min(3, { message: "Mobile number should be at least 10 digits" }),
-
-//   description: z
-//   .string({required_error:"Fill this input field"})
-//   .trim()
-//   .min(3, { message: "Mobile number should be at least 10 digits" }),
-
-//   address: z
-//   .string({required_error:"Fill this input field"})
-//   .trim()
-//   .min(3, { message: "Mobile number should be at least 10 digits" }),
-
-//   bedroom: z
-//   .string({required_error:"Fill this input field"})
-//   .trim(),
-
-//   bathroom: z
-//   .string({required_error:"Fill this input field"})
-//   .trim(),
-
-//   place: z
-//   .string({required_error:"Fill this input field"})
-//   .trim()
-//   .min(3, { message: "Mobile number should be at least 10 digits" }),
-
-//   rent: z
-//   .string({required_error:"Fill this input field"})
-//   .trim(),
-
-// });
 
 module.exports = { singupSchema, loginSchema };

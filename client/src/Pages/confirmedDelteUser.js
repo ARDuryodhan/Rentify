@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 const confirmedDelteUser = async () => {
   const result = await Swal.fire({
-    title: `Are you sure,</br> You want to Delete this User?`,
+    title: `Are you sure,</br> You want to Delete this?`,
     text: "You won't be able to revert this!",
     icon: "warning",
     background:"#030712",

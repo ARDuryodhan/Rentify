@@ -14,16 +14,44 @@ const getAllUsers = async (req, res) => {
     next(error);
   }
 };
-//user delete logic
 
+//user delete logic
 const deleteUserById = async (req, res) => {
   try {
     const id = req.params.id;
-    
+
     await User.deleteOne({ _id: id });
     return res.status(200).json({ message: "User Deleted Successfully" });
   } catch (error) {
     next(error);
+  }
+};
+
+//Update User Details logic
+
+const getUserById = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const data = await User.findOne({ _id: id }, { password: 0 });
+    return res.status(200).json(data);
+  } catch (error) {
+    next(error);
+  }
+};
+
+const updateUserById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const updateUserData = req.body;
+
+    const updatedUser = await User.updateOne({ _id: id }, {
+      $set: updateUserData,
+    });
+
+    return res.status(200).json(updatedUser)
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -36,6 +64,17 @@ const getAllContacts = async (req, res) => {
     return res.status(200).json(contacts);
   } catch (error) {
     console.log(error);
+    next(error);
+  }
+};
+
+const deleteContactById = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    await Contact.deleteOne({ _id: id });
+    return res.status(200).json({ message: "Contact Deleted Successfully" });
+  } catch (error) {
     next(error);
   }
 };
@@ -53,9 +92,25 @@ const getAllProperties = async (req, res) => {
   }
 };
 
+const deletePropertyById = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    await Property.deleteOne({ _id: id });
+    return res.status(200).json({ message: "Property Deleted Successfully" });
+  } catch (error) {
+    next(error);
+  }
+};
 module.exports = {
   getAllUsers,
-  getAllContacts,
-  getAllProperties,
   deleteUserById,
+  getUserById,
+  updateUserById,
+
+  getAllContacts,
+  deleteContactById,
+
+  getAllProperties,
+  deletePropertyById,
 };

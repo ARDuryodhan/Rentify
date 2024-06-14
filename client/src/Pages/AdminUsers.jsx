@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../Store/Store-Auth";
-import { FaEdit } from "react-icons/fa";
-import { FaTrashCan } from "react-icons/fa6";
+import {Link} from "react-router-dom";
 import confirmedDelteUser from "./confirmedDelteUser";
 import Swal from "sweetalert2";
+
+import { FaEdit } from "react-icons/fa";
+import { FaTrashCan } from "react-icons/fa6";
 
 
 export const AdminUsers = () => {
@@ -74,7 +76,7 @@ export const AdminUsers = () => {
   return (
     <>
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Admin Users Page</h1>
+        <h1 className="text-2xl font-bold mb-4 text-white">Admin Users Page</h1>
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -103,35 +105,35 @@ export const AdminUsers = () => {
               {users.map((user) => (
                 <tr
                   key={user._id}
-                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  className="bg-white border-b dark:bg-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-slate-200"
                 >
                   <th
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-600 uppercase"
                   >
                     {user.firstName || user.firstname}
                   </th>
                   <th
                     scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-600 uppercase"
                   >
                     {user.lastName || user.lastname}
                   </th>
-                  <td className="px-6 py-4 text-[15px]">
+                  <td className="px-6 py-4 text-[15px] text-gray-500">
                     {user.phone || user.mobile}
                   </td>
-                  <td className="px-6 py-4 text-[15px]">{user.email}</td>
-                  <td className="px-6 py-4 text-[15px] text-center font-bold">
+                  <td className="px-6 py-4 text-[15px] text-gray-500">{user.email}</td>
+                  <td className="px-6 py-4 text-[15px] text-center text-blue-700 font-bold">
                     {user.isAdmin ? "Yes" : "No"}
                   </td>
                   <td className="px-6 py-4 text-right flex gap-3">
-                    <button
+                    <Link to={`/admin/users/${user._id}/update`}
                       className="flex  items-center gap-1 font-medium text-center bg-green-400 border border-green-600 text-black dark:text-black hover:bg-green-700 hover:text-white px-6 py-1 rounded-full"
                       title="Update Details"
                     >
                       <FaEdit />
                       Edit
-                    </button>
+                    </Link>
                     <button
                       className="flex  items-center gap-1 font-medium text-center bg-red-400 border border-red-600 text-black dark:text-black hover:bg-red-700 hover:text-white px-6 py-1 rounded-full"
                       title="Delete User"

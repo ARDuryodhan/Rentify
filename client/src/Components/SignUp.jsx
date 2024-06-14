@@ -56,7 +56,7 @@ function Signup() {
           mobile: "",
           password: "",
         });
-        navigate("/login");
+        navigate("/");
       } else {
         toast.error(
           responseData.extraDetails
@@ -206,7 +206,7 @@ function Signup() {
                     to={"/rentifyterms"}
                     className="text-blue-600 hover:text-blue-500"
                   >
-                    {" "}
+                    
                     terms and conditions
                   </Link>
                 </label>
@@ -227,7 +227,7 @@ function Signup() {
                     to={"/login"}
                     className="font-bold hover:underline cursor-pointer text-blue-500"
                   >
-                    {" "}
+                    
                     Login
                   </Link>
                 </p>

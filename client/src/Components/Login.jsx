@@ -56,17 +56,17 @@ function Login() {
 
   return (
     <>
-      <div className="login-section p-3 ">
-        <div className="container grid grid-cols-2 items-center p-2 m-auto gap-4">
+      <div className="login-section p-3 mt-6">
+        <div className="container lg:flex lg:justify-center lg:box-content items-center mb-[2rem] gap-6">
           <div className="signImg">
-            <img src={loginImg} alt="login" />
+            <img src={loginImg} alt="login" className="m-auto"/>
           </div>
-          <div className="forms ">
-            <h2 className="mb-3 pb-1 item-center text-3xl font-extrabold text-gray-900">
+          <div className="forms w-full">
+            <h2 className="mb-5 pb-1 text-center item-center text-3xl font-extrabold text-gray-900">
               Login
             </h2>
             <form
-              className="space-y-6  bg-slate-200 p-4 rounded-md w-[25rem]"
+              className="space-y-6 m-auto lg:w-[40rem] bg-slate-100 p-4 rounded-md "
               onSubmit={handleSubmit}
             >
               <div>
