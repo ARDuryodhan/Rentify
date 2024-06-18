@@ -85,13 +85,13 @@ function UserProfile() {
       </div>
 
       <div className="bg-slate-100 p-6 rounded-lg shadow-md">
-        <h3 className="text-xl font-bold mb-4 text-gray-800">Account Settings</h3>
-        <button className="bg-blue-600 text-white px-4 py-2 font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
+        {/* <h3 className="text-xl font-bold mb-4 text-gray-800">Account Settings</h3> */}
+        {/* <button className="bg-blue-600 text-white px-4 py-2 font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-200">
           Edit Profile
-        </button>
+        </button> */}
         <Link
           to="/logout"
-          className="bg-red-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition duration-200 ml-4"
+          className="bg-red-500 text-white font-bold px-4 py-2 rounded-lg shadow-md hover:bg-red-600 transition duration-200 ml-4 w-full"
         >
           Logout
         </Link>

@@ -84,7 +84,6 @@ function PropertyForm() {
   }, []);
 
   if (!isLoggedIn) {
-    // Redirect to login or show message if user is not logged in
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto text-center">
